@@ -15,10 +15,15 @@ const Input: React.FC<InputProps> = ({ label, error, ...props }) => {
         {...props}
         className={`mt-2 block w-full rounded-lg border p-2 outline-none 
           transition duration-400 ease-in-out text-sm
-          focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+          focus:ring-1 focus-visible:ring-blue-500 focus:border-blue-500
           ${error ? "border-red-500" : "border-gray-300"}`}
+        aria-label="Iranian mobile number"
       />
-      {error && <p className="text-xs mt-1 ps-1 text-red-500">{error}</p>}
+      {error && (
+        <p className="text-xs mt-1 ps-1 text-red-500" aria-live="polite">
+          {error}
+        </p>
+      )}
     </label>
   );
 };

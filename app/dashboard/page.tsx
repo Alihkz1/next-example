@@ -39,7 +39,7 @@ export default function DashboardPage() {
             height={24}
             width={24}
           />
-          <Button type="submit" onClick={logout_onClick}>
+          <Button type="submit" onClick={logout_onClick} aria="logout">
             خروج از حساب کاربری
           </Button>
         </div>

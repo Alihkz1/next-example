@@ -57,7 +57,7 @@ export default function LoginForm() {
         error={error}
       />
 
-      <Button type="submit" loading={loading}>
+      <Button type="submit" loading={loading} aria="Login to dashboard">
         ورود
       </Button>
     </form>
