@@ -1,11 +1,14 @@
+import Shapes from "@/components/shapes/shapes";
 import LoginForm from "./login-form";
 
 export default function LoginPage() {
   return (
-    <main className="flex items-center justify-center min-h-screen p-4">
-      <div className="w-full md:w-[600px] h-[250px] p-4 bg-gray-50 rounded-xl">
-        <LoginForm/>
+    <main className="grid md:grid-cols-2 min-h-screen">
+      <Shapes />
+      <div className="w-50 h-full p-4 rounded-lg bg-white shadow-md flex justify-center items-center">
+        <LoginForm />
       </div>
+      <Shapes className="hidden md:block bg-background" /> 
     </main>
   );
 }

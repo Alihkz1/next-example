@@ -7,20 +7,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  loading,
-  fullWidth,
-  children,
-  ...props
-}) => (
+const Button: React.FC<ButtonProps> = ({ loading, children, ...props }) => (
   <button
     {...props}
     disabled={loading || props.disabled}
-    className={`${
-      fullWidth ? "w-full" : ""
-    } rounded-xl bg-blue-600 text-white py-2 font-medium hover:bg-blue-700 disabled:opacity-50`}
+    className="w-full rounded-lg bg-primary text-white py-2 font-medium disabled:opacity-50 transition-transform duration-1000 ease-in-out hover:scale-x-105"
   >
-    {loading ? "Loading..." : children}
+    {loading ? "کمی صبر کنید..." : children}
   </button>
 );
 
