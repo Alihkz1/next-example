@@ -8,7 +8,7 @@ export default function LoginPage() {
       <div className="w-50 h-full p-4 rounded-lg bg-white shadow-md flex justify-center items-center">
         <LoginForm />
       </div>
-      <Shapes className="hidden md:block bg-background" /> 
+      <Shapes className="hidden md:block bg-background md:w-1/2" /> 
     </main>
   );
 }
