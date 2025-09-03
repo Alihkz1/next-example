@@ -1,0 +1,73 @@
+* {
+  font-family: "normal";
+}
+
+@font-face {
+  font-family: "normal";
+  src: url("./IRANYekanXFaNum-normal-400-100.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "normal-900";
+  src: url("./IRANYekanXFaNum Black-normal-900-100.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "normal-700";
+  src: url("./IRANYekanXFaNum Bold-normal-700-100.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "db-600";
+  src: url("./IRANYekanXFaNum Light-normal-300-100.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mn-500";
+  src: url("./IRANYekanXFaNum Medium-normal-500-100.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ln-300";
+  src: url("./IRANYekanXFaNum DemiBold-normal-600-100.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "r-400";
+  src: url("./RokhFaNum-normal-400-100.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "r-600";
+  src: url("./RokhFaNum-normal-600-100.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "r-700";
+  src: url("./RokhFaNum-normal-700-100.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "r-900";
+  src: url("./RokhFaNum-normal-900-100.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
