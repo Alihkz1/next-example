@@ -29,7 +29,7 @@ export default function DashboardPage() {
       <Card>
         <div className="flex flex-col items-center gap-4 w-full px-4">
           <h1 className="text-xl font-semibold">
-            Welcome, {user.name.first} {user.name.last} 👋
+            Welcome {user.name.first} {user.name.last}!
           </h1>
           <p className="text-gray-600">{user.email}</p>
           <Image
