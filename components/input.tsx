@@ -10,7 +10,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({ label, error, ...props }) => {
   return (
     <label className="block w-full">
-      <span className="text-sm font-medium ps-2">{label}:</span>
+      <span className="text-sm ps-2">{label}:</span>
       <input
         {...props}
         className={`mt-2 block w-full rounded-lg border p-2 outline-none 
