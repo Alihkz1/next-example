@@ -9,6 +9,7 @@ import Input from "@/components/input";
 import Button from "@/components/button";
 
 async function fetchRandomUser() {
+  // get user data from server
   const res = await fetch("https://randomuser.me/api/?results=1&nat=us");
   if (!res.ok) throw new Error("Failed to fetch user");
   const data = await res.json();
@@ -23,6 +24,7 @@ export default function LoginForm() {
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
+    // fetch user data from server if phone number is correct
     e.preventDefault();
 
     if (!validateIranPhone(phone)) {

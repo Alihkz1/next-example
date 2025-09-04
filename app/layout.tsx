@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Login Demo",
+  title: "Dekamond",
   description: "Next.js login flow with localStorage",
 };
 
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
