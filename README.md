@@ -22,3 +22,10 @@ It demonstrates a simple login flow with form validation, API integration, and a
 git clone https://github.com/Alihkz1/next-example.git
 cd next-example
 ```
+
+### 2️⃣ View Online
+
+```bash
+https://next-example-murex-two.vercel.app/login
+```
+
