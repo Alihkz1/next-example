@@ -4,7 +4,7 @@ import Card from "@/components/card";
 
 export default function LoginPage() {
   return (
-    <main className="grid md:grid-cols-2 min-h-screen">
+    <main className="grid md:grid-cols-2 min-h-screen" dir="rtl">
       <Card>
         <LoginForm />
       </Card>

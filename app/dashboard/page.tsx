@@ -1,26 +1,13 @@
 "use client";
-
-import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { getUser, clearUser } from "@/lib/storage";
-import Image from "next/image";
 import Button from "@/components/button";
 import Card from "@/components/card";
+import { supaBase } from "../sipabase-client";
 
 export default function DashboardPage() {
   const router = useRouter();
-  const user = getUser();
-
-  useEffect(() => {
-    if (!user) {
-      router.replace("/login");
-    }
-  }, [user, router]);
-
-  if (!user) return null;
-
-  function logout_onClick() {
-    clearUser();
+  async function logout_onClick() {
+    await supaBase.auth.signOut();
     router.push("/login");
   }
 
@@ -28,17 +15,7 @@ export default function DashboardPage() {
     <main className="flex flex-col items-center justify-center min-h-screen p-4 bg-background">
       <Card>
         <div className="flex flex-col items-center gap-4 w-full px-4">
-          <h1 className="text-xl font-semibold">
-            Welcome, {user.name.first} {user.name.last}
-          </h1>
-          <p className="text-gray-600">{user.email}</p>
-          <Image
-            src={user.picture.medium}
-            className="w-24 h-24 rounded-full mx-auto my-4"
-            alt="profile image"
-            height={24}
-            width={24}
-          />
+          <h1 className="text-xl font-semibold">به داشبورد خوش آمدید</h1>
           <Button type="submit" onClick={logout_onClick} aria="logout">
             خروج از حساب کاربری
           </Button>

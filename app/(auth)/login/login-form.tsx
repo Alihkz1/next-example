@@ -3,60 +3,53 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { validateIranPhone } from "@/lib/validation";
-import { setUser } from "@/lib/storage";
 import Input from "@/components/input";
 import Button from "@/components/button";
-
-async function fetchRandomUser() {
-  // get user data from server
-  const res = await fetch("https://randomuser.me/api/?results=1&nat=us");
-  if (!res.ok) throw new Error("Failed to fetch user");
-  const data = await res.json();
-  return data.results[0];
-}
+import { supaBase } from "@/app/sipabase-client";
 
 export default function LoginForm() {
-  const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState("fisowa4759@fanwn.com");
+  const [password, setPassword] = useState("passWord");
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    // fetch user data from server if phone number is correct
+  const onLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
-    if (!validateIranPhone(phone)) {
-      setError("فرمت تلفن همراه اشتباه است.");
+    const { error } = await supaBase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      console.error("Error in login: ", error);
+      setLoading(false);
       return;
     }
 
-    setError("");
-    setLoading(true);
-
-    try {
-      const user = await fetchRandomUser();
-      setUser(user);
-      router.push("/dashboard");
-    } catch {
-      setError("Something went wrong. Try again.");
-    } finally {
-      setLoading(false);
-    }
+    setLoading(false);
+    router.push("/tasks");
   };
 
   return (
     <form
-      onSubmit={handleSubmit}
-      className="flex flex-col items-center gap-4 justify-between h-[200px] w-full md:w-[400px] border border-gray-200 p-4 rounded-xl shadow-md bg-gray-50"
+      onSubmit={onLogin}
+      className="flex flex-col items-center gap-4 justify-between h-[250px] w-full md:w-[400px] border border-gray-200 p-4 rounded-xl shadow-md bg-gray-50"
     >
       <Input
-        label="شماره همراه"
-        placeholder="شماره همراه خود را وارد نمایید"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-        error={error}
+        label="ایمیل"
+        placeholder="ایمیل خود را وارد نمایید"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <Input
+        label="رمز عبور"
+        placeholder="رمز عبور"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
 
       <Button type="submit" loading={loading} aria="Login to dashboard">

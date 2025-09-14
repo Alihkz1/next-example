@@ -1,10 +1,4 @@
-import type { Metadata } from "next";
 import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Dekamond",
-  description: "Next.js login flow with localStorage",
-};
 
 export default function RootLayout({
   children,
@@ -12,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html>
       <body>{children}</body>
     </html>
   );
