@@ -6,6 +6,7 @@ import { supaBase } from "../sipabase-client";
 
 export default function DashboardPage() {
   const router = useRouter();
+  
   async function logout_onClick() {
     await supaBase.auth.signOut();
     router.push("/login");
